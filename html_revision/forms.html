@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete HTML Form</title>
+
+    <!-- Internal CSS using <style> tag -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        fieldset {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Complete Registration Form</h2>
+
+<!-- Form tag (Main form container) -->
+<form action="#" method="post">
+
+    <!-- Fieldset tag (Groups related form elements) -->
+    <fieldset>
+        <!-- Legend tag (Title of fieldset) -->
+        <legend>Personal Information</legend>
+
+        <!-- Label tag -->
+        <label for="name">Full Name:</label>
+
+        <!-- Input tag - type="text" -->
+        <input type="text" id="name" name="name" required minlength="3" maxlength="50">
+
+        <!-- Input tag - type="email" -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Input tag - type="password" -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Input tag - type="date" -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <!-- Input tag - type="number" -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="100">
+
+        <!-- Input tag - type="radio" -->
+        <label>Gender:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Preferences</legend>
+
+        <!-- Input tag - type="checkbox" -->
+        <label>Skills:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="skills" value="html"> HTML</label>
+            <label><input type="checkbox" name="skills" value="css"> CSS</label>
+            <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label>
+        </div>
+
+        <!-- Select tag (Dropdown list) -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <!-- Option tag -->
+            <option value="">Select Country</option>
+            <option value="india" sele>India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+        </select>
+
+        <!-- Textarea tag (Multiline text input) -->
+        <label for="bio">About You:</label>
+        <textarea id="bio" name="bio" rows="4"></textarea>
+
+        <!-- Input tag - type="file" -->
+        <label for="file">Upload Resume:</label>
+        <input type="file" id="file" name="file">
+
+        <!-- Input tag - type="color" -->
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color">
+
+        <!-- Input tag - type="range" -->
+        <label for="range">Experience (0-10 years):</label>
+        <input type="range" id="range" name="experience" min="0" max="10">
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Other Inputs</legend>
+
+        <!-- Input tag - type="search" -->
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search">
+
+        <!-- Input tag - type="tel" -->
+        <label for="tel">Phone:</label>
+        <input type="tel" id="tel" name="phone">
+
+        <!-- Input tag - type="url" -->
+        <label for="url">Website:</label>
+        <input type="url" id="url" name="website">
+
+        <!-- Input tag - type="time" -->
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time">
+
+        <!-- Input tag - type="month" -->
+        <label for="month">Joining Month:</label>
+        <input type="month" id="month" name="month">
+
+        <!-- Input tag - type="week" -->
+        <label for="week">Available Week:</label>
+        <input type="week" id="week" name="week">
+
+        <!-- Input tag - type="datetime-local" -->
+        <label for="datetime">Meeting Date & Time:</label>
+        <input type="datetime-local" id="datetime" name="datetime">
+
+    </fieldset>
+
+    <!-- Button tag - type="submit" -->
+    <button type="submit">Submit</button>
+
+    <!-- Button tag - type="reset" -->
+    <button type="reset">Reset</button>
+
+</form>
+
+</body>
+</html>

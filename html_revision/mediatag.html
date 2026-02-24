@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HTML Media Project</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+      section {
+        margin: 30px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px gray;
+      }
+      img,
+      video {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Complete HTML Media Elements Project</h1>
+
+    <!-- ================= IMAGE SECTION ================= -->
+    <section>
+      <h2>1️⃣ Image Tag</h2>
+
+      <!-- Simple Image -->
+      <img src="https://images.pexels.com/photos/36027809/pexels-photo-36027809.jpeg" alt="Sample Image" width="280px" />
+
+      <h3>Picture Tag (Responsive Image)</h3>
+
+      <!-- Picture Tag -->
+      <picture>
+        <source
+          media="(max-width: 600px)"
+          srcset="https://images.pexels.com/photos/36027809/pexels-photo-36027809.jpeg"
+        />
+        <source
+          media="(max-width: 1000px)"
+          srcset="https://cdn.pixabay.com/blog/preview/2026/02/20/23-49-28-292_960_720.jpg"
+        />
+        <img src="https://cdn.pixabay.com/blog/preview/2026/02/15/23-51-51-595_960_720.jpg" alt="Responsive Image" width="280px"/>
+      </picture>
+    </section>
+
+    <!-- ================= AUDIO SECTION ================= -->
+    <section>
+      <h2>2️⃣ Audio Tag</h2>
+
+      <!-- Audio Tag with Source -->
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg" />
+        <source src="samplle.ogg" type="audio/ogg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- ================= VIDEO SECTION ================= -->
+    <section>
+      <h2>3️⃣ Video Tag</h2>
+
+      <!-- Video Tag with Source and Track -->
+      <video width="500" controls>
+        <source src="video.mp4" type="video/mp4" />
+        <source src="sample-video.webm" type="video/webm" />
+
+        <!-- Subtitle Track -->
+        <track
+          src="subtitles.vtt"
+          kind="subtitles"
+          srclang="en"
+          label="English"
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- ================= IFRAME SECTION ================= -->
+    <section>
+      <h2>4️⃣ Iframe Tag (YouTube Embed)</h2>
+
+      <iframe
+        width="815"
+        height="458"
+        src="https://www.youtube.com/embed/WJypZucoLok"
+        title="Punjabi Love Mashup Jukebox | Harshal Music | The Prophec X Sukha X Karan Aujla X Diljit Dosanjh"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <!-- ================= EMBED SECTION ================= -->
+    <section>
+      <h2>5️⃣ Embed Tag (PDF File)</h2>
+
+      <embed src="HTML_3.pdf" width="500" height="400" />
+    </section>
+
+    <!-- ================= OBJECT SECTION ================= -->
+    <section>
+      <h2>6️⃣ Object Tag</h2>
+
+      <object data="HTML_3.pdf" type="application/pdf" width="500" height="400">
+        Your browser does not support PDFs.
+      </object>
+    </section>
+  </body>
+</html>
