@@ -265,6 +265,7 @@
 
 
 //EScaping characters in string-------------------------
+
 // let name = "Chandan\nYadav";
 // console.log(name);
 // console.log(name.length);
@@ -316,22 +317,67 @@
 // console.log(name.charAt(11));
 // console.log(name.charAt(12));
 
-let n = [1, 2, 3, 4, 5]; 
-console.log(n)
-console.log(n.length);
-console.log(n[0]);
+// let n = [1, 2, 3, 4, 5]; 
+// console.log(n)
+// console.log(n.length);
+// console.log(n[0]);
 
-console.log(typeof n);
+// console.log(typeof n);
 
-let newArray = (n.toString());
-console.log(newArray);
-console.log(typeof newArray)  
+// let newArray = (n.toString());
+// console.log(newArray);
+// console.log(typeof newArray)  
 
-console.log(n.join("-"));
-// console.log(n.pop());
+// console.log(n.join("-"));
+// // console.log(n.pop());
+// // console.log(n);
+// console.log(n.push(6));
 // console.log(n);
-console.log(n.push(6));
-console.log(n);
+// delete n[2];
+// console.log(n);
+
+//sort method in array-------------------------
+
+// let s  = [5, 3, 8, 1, 2];
+// s.sort();
+// console.log(s);
+
+// let compare = (a, b) => {
+//     return a - b;
+// }
+
+// let num = [551, 22, 3, 14, 5, 6, 7, 8, 229]
+// num.sort(compare)
+// console.log(num)
+
+//splice method in array-------------------------------------------------
+
+/*add element without removing any element-------------------*/
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// console.log(arr);
+// console.log(arr.splice(3, 0, 13, 14))
+// console.log(arr);
+
+/*remove element without adding any element-------------------*/
+
+// console.log(arr.splice(3, 2));
+// console.log(arr);
+
+/*remove element and add element at the same time-------------------*/
+
+// arr.splice(3, 2, 13, 14);
+// console.log(arr);
+
+/*forEach method in array-------------------------------------------------*/
+
+let arr = [10, 11, 12, 15, 16, 14, 15];
+arr.forEach(value => {console.log(value * 2)});
+
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// let result = arr.forEach(value => value * 2);
+// console.log(result); //does not return new array
 
 /***********************************************Practice Strings and Arrays************************************/
 
@@ -349,3 +395,4 @@ console.log(n);
 
 // let newname2 = name.replace("Chandan", "Sandesh");
 // console.log(newname2);
+
