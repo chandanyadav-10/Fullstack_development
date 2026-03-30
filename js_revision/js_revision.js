@@ -17,7 +17,6 @@
 
 // console.log(a);
 
-
 // const dictionary = {
 //   Happy: "Feeling good and joyful",
 //   Sad: "Feeling unhappy or down",
@@ -47,7 +46,6 @@
 // }
 
 // console.log(typeof age);
-
 
 // let num = Number(prompt("Enter a number: "));
 
@@ -92,7 +90,6 @@
 
 // console.log("Result: " + result);
 
-
 //if...else if...else if...else...---------------------------------------
 
 // let num = Number(prompt("Enter a number:"));
@@ -106,7 +103,6 @@
 // } else {
 //   console.log("Not divisible by 2 or 3");
 // }
-
 
 //ternary operator------------------------------------------------
 
@@ -123,7 +119,6 @@
 //   : "Not divisible by both 2 or 3";
 
 // console.log(result);
-
 
 /*****************************Loops and FUnction**************************************** */
 
@@ -151,7 +146,6 @@
 //     console.log("Index:", index, "Value:", numbers[index]);
 // }
 
-
 // simple program to demonstrate for of loop--------------------------------
 
 // let fruits = ["Apple", "Banana", "Mango"]; // for of loop doesn't work directly with object
@@ -168,7 +162,7 @@
 
 // for (let value of student) {
 //     console.log(value);
-// } 
+// }
 
 // correct way using object.values>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -188,7 +182,6 @@
 
 // Object + for...in → direct ✅
 // Object + for...of → use Object.values() or Object.entries() ✅
-
 
 //simple while loop program---------------------------------------------------
 
@@ -222,7 +215,6 @@
 
 // greet("Chandan");
 
-
 /*******************************Practice loop and fucntion*************************** */
 
 //print marks of students in obj using for loop-------------------------------------
@@ -230,7 +222,7 @@
 // let marks = {
 //     Harry: 98,
 //     Rohan: 70,
-//     Akash: 75, 
+//     Akash: 75,
 //     Chandan: 85,
 //     Sandesh: 80
 // }
@@ -243,7 +235,6 @@
 //     console.log("Marks of " + Object.keys(marks)[i] + " are " + marks[Object.keys(marks)[i]]);
 // }
 
-
 // let cn = 52;
 // let i;
 
@@ -254,15 +245,12 @@
 
 // console.log("You have Entered a correct number");
 
-
 // let mean = (a,b,c,d) =>{
 //     return (a+b+c+d)/4;
 // }
 // console.log(mean(10,20,30,40));
 
-
 /**********************************Stirng and Array Methods*********************************** */
-
 
 //EScaping characters in string-------------------------
 
@@ -274,7 +262,7 @@
 // console.log(str);
 
 // let text = "Hello\nChandan\tWelcome to \"JavaScript\"";
-// console.log(text); 
+// console.log(text);
 
 // let name1 = "Chandan";
 // let name2 = "Yadav";
@@ -317,7 +305,7 @@
 // console.log(name.charAt(11));
 // console.log(name.charAt(12));
 
-// let n = [1, 2, 3, 4, 5]; 
+// let n = [1, 2, 3, 4, 5];
 // console.log(n)
 // console.log(n.length);
 // console.log(n[0]);
@@ -326,7 +314,7 @@
 
 // let newArray = (n.toString());
 // console.log(newArray);
-// console.log(typeof newArray)  
+// console.log(typeof newArray)
 
 // console.log(n.join("-"));
 // // console.log(n.pop());
@@ -371,13 +359,51 @@
 
 /*forEach method in array-------------------------------------------------*/
 
-let arr = [10, 11, 12, 15, 16, 14, 15];
-arr.forEach(value => {console.log(value * 2)});
-
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// arr.forEach(value => {console.log(value * 2)});
 
 // let arr = [10, 11, 12, 15, 16, 14, 15];
 // let result = arr.forEach(value => value * 2);
 // console.log(result); //does not return new array
+
+/*Array.from method--------------------------------------------------------*/
+
+// let name = "Chandan Yadav";
+// let arr = Array.from(name);
+// console.log(arr);
+
+/*for of anf for in loop with array-------------------------------------------------*/
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// for(let index in arr){
+//     console.log("Index: " + index + " Value: " + arr[index]);
+// }
+
+// for(let value of arr){
+//     console.log("Value: " + value);
+// }
+
+/*map, filter and reduce method in array-------------------------------------------------*/
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// console.log(arr);
+// let newarr = arr.map((value, index) => {
+//   return value + index;
+// });
+// console.log(newarr);
+
+// let f =  (value) => {
+//     return value > 12
+// }
+
+// let newArr = arr.filter(f);
+// console.log(newArr);
+
+// let newarr = arr.reduce((h1, h2) => {
+//   return h1 + h2;
+// });
+// console.log(newarr);
+
 
 /***********************************************Practice Strings and Arrays************************************/
 
@@ -396,3 +422,45 @@ arr.forEach(value => {console.log(value * 2)});
 // let newname2 = name.replace("Chandan", "Sandesh");
 // console.log(newname2);
 
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// console.log(typeof arr);
+// let userInput = Number(prompt("Enter a number: "));
+// arr.push(userInput);
+// console.log(arr);
+// console.log(typeof arr)
+
+// let arr = [10, 11, 12, 15, 16, 14, 15];
+// let userInput;
+// while(userInput != 0){
+// userInput = Number(prompt("Enter a number: "));
+// arr.push(userInput);
+// console.log(arr);
+// }
+
+
+// let arr = [10, 30, 500, 16, 80, 99, 15];
+// let divisibleBy10 = (value) =>{
+//     return value % 10 === 0;
+// }
+
+// let newArr = arr.filter(divisibleBy10);
+// console.log(newArr);
+
+// let divideBy10 = arr.filter(value =>{
+//     return value % 10 === 0;
+// })
+
+// console.log(divideBy10);
+
+// let arr = [10, 30, 500, 16, 80, 99, 15];
+// let newArr = arr.map(value =>{
+//     return value * value;
+// })
+// console.log(newArr);    
+
+let arr = [1,2,3,4,5];
+let n = arr.reduce((h1, h2) =>{
+    return h1 * h2;
+})
+console.log(n);
