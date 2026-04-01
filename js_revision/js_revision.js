@@ -16,6 +16,8 @@
 // a['name'] = "Sandesh";
 
 // console.log(a);
+// console.log(a.class);
+// console.log(a["class"]);
 
 // const dictionary = {
 //   Happy: "Feeling good and joyful",
@@ -372,7 +374,7 @@
 // let arr = Array.from(name);
 // console.log(arr);
 
-/*for of anf for in loop with array-------------------------------------------------*/
+/*for of and for in loop with array-------------------------------------------------*/
 
 // let arr = [10, 11, 12, 15, 16, 14, 15];
 // for(let index in arr){
@@ -404,7 +406,6 @@
 // });
 // console.log(newarr);
 
-
 /***********************************************Practice Strings and Arrays************************************/
 
 // console.log("harr\"".length);
@@ -422,7 +423,6 @@
 // let newname2 = name.replace("Chandan", "Sandesh");
 // console.log(newname2);
 
-
 // let arr = [10, 11, 12, 15, 16, 14, 15];
 // console.log(typeof arr);
 // let userInput = Number(prompt("Enter a number: "));
@@ -437,7 +437,6 @@
 // arr.push(userInput);
 // console.log(arr);
 // }
-
 
 // let arr = [10, 30, 500, 16, 80, 99, 15];
 // let divisibleBy10 = (value) =>{
@@ -457,10 +456,69 @@
 // let newArr = arr.map(value =>{
 //     return value * value;
 // })
-// console.log(newArr);    
+// console.log(newArr);
 
-let arr = [1,2,3,4,5];
-let n = arr.reduce((h1, h2) =>{
-    return h1 * h2;
-})
-console.log(n);
+// let arr = [1,2,3,4,5];
+// let n = arr.reduce((h1, h2) =>{
+//     return h1 * h2;
+// })
+// console.log(n);
+
+/********************************************Alert, Prompt and confirm*********************************/
+
+// alert("Welcome to JavaScript!");
+// let value = prompt("Enter a number: ");
+// let write = confirm("Do you want to write it on the page?");
+
+// if(write){
+//     document.write("You entered: " + value);
+// }
+// else{
+//     document.write("Please write it on the page next time!!");
+// }
+
+// let name = prompt("Enter your name: ", "Chandan");
+// console.log("Hello " + name);
+
+/*********************************************DOM and BOM**********************************************/
+
+document.body.style.backgroundColor = "lightblue";
+document.body.style.fontSize = "20px";
+document.body.style.fontFamily = "Arial, sans-serif";
+document.body.style.textAlign = "center";
+document.body.style.padding = "20px";
+
+/*********************************************chapter 6 practice***********************************/
+
+// let runAgain = true;
+
+// const canDrive = (age) => age >= 18;
+
+// while (runAgain) {
+//   let age = Number(prompt("Enter Your Age: "));
+
+//   if (isNaN(age) || age < 0) {
+//     alert("Please enter a valid age.");
+//     continue;
+//   }
+
+//   if (canDrive(age)) {
+//     alert("You are eligible to drive car.");
+//   } else {
+//     alert("You are not eligible to drive a car.");
+//   }
+
+//   runAgain = confirm("Do you want to see prompt again?");
+// }
+
+// let userInput = Number(prompt("Enter a Number greater than 4: "));
+
+// if (userInput > 4) {
+//     window.open("https://google.com", "_blank");
+// } else {
+//     alert("Oops!! Enter invalid number");
+// }
+
+
+// let color =  prompt("Enter Background Color: ");
+// document.body.style.backgroundColor = color;
