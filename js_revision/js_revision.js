@@ -482,11 +482,59 @@
 
 /*********************************************DOM and BOM**********************************************/
 
-document.body.style.backgroundColor = "lightblue";
-document.body.style.fontSize = "20px";
-document.body.style.fontFamily = "Arial, sans-serif";
-document.body.style.textAlign = "center";
-document.body.style.padding = "20px";
+// document.body.style.backgroundColor = "lightblue";
+// document.body.style.fontSize = "20px";
+// document.body.style.fontFamily = "Arial, sans-serif";
+// document.body.style.textAlign = "center";
+// document.body.style.padding = "20px";
+
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+// console.log(document.body.childNodes);
+
+// let arr = Array.from(document.body.childNodes);
+// console.log(arr);
+
+// let firstChild = document.body.firstChild;
+// console.log(firstChild)
+// console.log(typeof firstChild);
+// console.log(document.body.childNodes[0]);
+
+// console.log(document.body.lastChild);
+// console.log(document.body.childNodes[document.body.childNodes.length-1]);
+
+// console.log(document.body.hasChildNodes());
+
+// console.log(document.documentElement.parentNode);
+// console.log(document.documentElement.parentElement);
+
+// console.log(document.body.firstChild.nextSibling)
+
+// let a =  document.body;
+// console.log('First Child Node of body: ',  a.firstChild);
+// console.log('First Element Child Node of body: ',  a.firstElementChild);
+
+// let changeElemBackground = ()=>{
+//     a.firstElementChild.style.background = 'red'
+// }
+
+// changeElemBackground();
+
+let b = document.body.firstElementChild.nextElementSibling
+console.log(b)
+console.log(b.rows)
+console.log(b.caption)
+console.log(b.tHead.firstElementChild);
+console.log(b.tBodies);
+console.log(b.tBodies[0].rows)
+console.log(b.rows[1].cells)
+console.log(b.rows[0].rowIndex)
+console.log(b.rows[1].rowIndex)
+console.log(b.rows[1].sectionRowIndex);
+console.log(b.rows[0].cells[0].cellIndex)
+
+
+
 
 /*********************************************chapter 6 practice***********************************/
 
