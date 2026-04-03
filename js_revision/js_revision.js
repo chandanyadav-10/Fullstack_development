@@ -520,20 +520,18 @@
 
 // changeElemBackground();
 
-let b = document.body.firstElementChild.nextElementSibling
-console.log(b)
-console.log(b.rows)
-console.log(b.caption)
-console.log(b.tHead.firstElementChild);
-console.log(b.tBodies);
-console.log(b.tBodies[0].rows)
-console.log(b.rows[1].cells)
-console.log(b.rows[0].rowIndex)
-console.log(b.rows[1].rowIndex)
-console.log(b.rows[1].sectionRowIndex);
-console.log(b.rows[0].cells[0].cellIndex)
-
-
+// let b = document.body.firstElementChild.nextElementSibling
+// console.log(b)
+// console.log(b.rows)
+// console.log(b.caption)
+// console.log(b.tHead.firstElementChild);
+// console.log(b.tBodies);
+// console.log(b.tBodies[0].rows)
+// console.log(b.rows[1].cells)
+// console.log(b.rows[0].rowIndex)
+// console.log(b.rows[1].rowIndex)
+// console.log(b.rows[1].sectionRowIndex);
+// console.log(b.rows[0].cells[0].cellIndex)
 
 
 /*********************************************chapter 6 practice***********************************/
