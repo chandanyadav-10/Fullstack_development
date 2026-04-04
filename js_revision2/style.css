@@ -1,0 +1,20 @@
+.box {
+  background-color: blueviolet;
+  color: aliceblue;
+}
+
+.red {
+  background-color: brown;
+  color: aliceblue;
+}
+
+.red {
+  height: 5rem;
+  width: 5rem;
+  background-color: red;
+}
+.blue {
+  height: 5rem;
+  width: 5rem;
+  background-color: blue;
+}
