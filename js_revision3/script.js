@@ -19,10 +19,9 @@ let loadScript = (src, callback) => {
 function hello(error, src) {
   if (error) {
     console.log(error);
-    return
+    return;
   }
-    alert("Hello World1 " + src);
-
+  alert("Hello World1 " + src);
 }
 function goodmorning(error, src) {
   alert("Good Morning: " + src);
