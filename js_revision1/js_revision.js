@@ -61,7 +61,7 @@
 
 // console.log(typeof num);
 
-//switch case statement------------------
+//switch case statement--------------------------------------------------------------------
 
 // let num1 = Number(prompt("Enter first number:"));
 // let num2 = Number(prompt("Enter second number:"));
@@ -173,6 +173,7 @@
 //     age: 21,
 //     course: "MCA"
 // };
+
 
 // for (let value of Object.values(student)) {
 //     console.log(value);
@@ -568,3 +569,4 @@
 
 // let color =  prompt("Enter Background Color: ");
 // document.body.style.backgroundColor = color;
+

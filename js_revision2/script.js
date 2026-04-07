@@ -59,7 +59,7 @@
 // div1.prepend(div2); // In the start of div box (inner)
 // div1.before(div2); // before the begining of div box (outer)
 // div1.after(div2); // after the end of div box (outer)
-// div1.replaceWith(div2); // replace whole div box with another div element
+// div1.replaceWith(div2); // replace whole div1 box with div2 element
 
 //insertAdjacentHTML/Text/Element-------------------------------------------------------------------------
 
@@ -192,7 +192,12 @@
 
 //Q.5
 
-let box = document.getElementsByTagName("div")[0];
-setInterval(function () {
-  box.classList.toggle("blue");
-}, 300);
+// let box = document.getElementsByTagName("div")[0];
+// setInterval(function () {
+//   box.classList.toggle("blue");
+// }, 300);
+
+
+
+
+
