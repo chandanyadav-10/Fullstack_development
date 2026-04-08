@@ -150,3 +150,80 @@
 // }).catch((error)=>{
 //   console.log(error)
 // })
+
+//Attaching multiple handlers to Promise-------------------------------------------------------------
+
+// let p1 = new Promise((resolve, reject) => {
+//   console.log("I am not resolved");
+//   setTimeout(() => {
+//     resolve(1);
+//   }, 3000);
+// });
+
+// //attach multiple handler
+// p1.then((value) => {
+//   console.log("I am promise and I am resolved now");
+// });
+
+// p1.then((value) => {
+//   console.log("Heyyyyyyyyyyyyyyyyyyyy");
+// });
+
+// p1.then((value) => {
+//   setTimeout(() => {
+//     alert("Hello I am handler3");
+//   }, 5000);
+// });
+
+//Promise API---------------------------------------------------------------------------------------
+
+let p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Value 1");
+    // reject(new Error("Error"))
+  }, 6000);
+});
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Value 2");
+  }, 7000);
+});
+let p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Value 3");
+    // reject(new Error("Error"))
+  }, 3000);
+});
+let p4 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Value 4");
+  }, 4000);
+});
+
+// p1.then((value) => {
+//   console.log(value);
+// });
+// p2.then((value) => {
+//   console.log(value);
+// });
+// p3.then((value) => {
+//   console.log(value);
+// });
+// p4.then((value) => {
+//   console.log(value);
+// });
+
+// promise API methods-------------------------------------------
+// let promise_all = Promise.all([p1, p2, p3])
+// let promise_all = Promise.allSettled([p1, p2, p3, p4])
+// let promise_all = Promise.race([p1, p2, p3, p4])
+// let promise_all = Promise.any([p1, p2, p3, p4])
+// let promise_all  = Promise.resolve(6)
+// let promise_all = Promise.reject(new Error("New Error"))
+
+// promise_all.then((value)=>{
+//     console.log(value)
+// })
+
+
+
