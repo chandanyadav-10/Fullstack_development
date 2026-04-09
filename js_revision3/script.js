@@ -177,28 +177,28 @@
 
 //Promise API---------------------------------------------------------------------------------------
 
-let p1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Value 1");
-    // reject(new Error("Error"))
-  }, 6000);
-});
-let p2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Value 2");
-  }, 7000);
-});
-let p3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Value 3");
-    // reject(new Error("Error"))
-  }, 3000);
-});
-let p4 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Value 4");
-  }, 4000);
-});
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Value 1");
+//     // reject(new Error("Error"))
+//   }, 6000);
+// });
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Value 2");
+//   }, 7000);
+// });
+// let p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Value 3");
+//     // reject(new Error("Error"))
+//   }, 3000);
+// });
+// let p4 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Value 4");
+//   }, 4000);
+// });
 
 // p1.then((value) => {
 //   console.log(value);
@@ -225,5 +225,175 @@ let p4 = new Promise((resolve, reject) => {
 //     console.log(value)
 // })
 
+//async/await-------------------------------------------------------------
 
+// async function mausam() {
+//   let mumbaiWeather = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("29 Deg.");
+//     }, 5000);
+//   });
+//   let upWeather = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("33 Deg.");
+//     }, 7000);
+//   });
 
+// mumbaiWeather.then(alert);
+// upWeather.then(alert);
+
+// mumbaiWeather.then((w) => {
+//   alert("Mumbai ka weather: " + w);
+// });
+// upWeather.then((w) => {
+//   alert("UP ka weather: " + w);
+// });
+
+//   console.log("Fetching weather of Mumbai, Please wait...");
+//   let mumbaiW = await mumbaiWeather;
+//   console.log("Fetched Mumbai weather. " + mumbaiW);
+//   console.log("Fetching weather of UP, Please wait...");
+//   let upW = await upWeather;
+//   console.log("Fetched UP weather. " + upW);
+// }
+
+// let chandan = async () => {
+//   console.log(
+//     "Hello my name is chandan and I am waiting to fetched weather... ooo wow!!!! weather is now fetched",
+//   );
+// };
+
+// let weatherR = async () => {
+//   let w = await mausam();
+//   let c = await chandan();
+// };
+
+// weatherR();
+
+//try and catch error handling in js-----------------------------------------------------------------
+
+// setTimeout(() => {
+//   console.log("Start hacking....., Please wait....");
+// }, 1000);
+// // console.log(chandan)
+
+// // try/catch--------------
+// try {
+//   // setTimeout(() => {
+//   //   console.log(chandan);
+//   // }, 100);
+//   console.log(chandan);
+// } catch (error) {
+//   console.log(error);
+// }
+
+// setTimeout(() => {
+//   console.log("Fetching data from server....., Please wait....");
+//   // console.log(chandan)
+// }, 2000);
+// setTimeout(() => {
+//   console.log("Data feched from facebook....., Please wait....");
+// }, 3000);
+// setTimeout(() => {
+//   console.log("Hacked Nazeeb username and passwords....., Please wait....");
+// }, 4000);
+
+//Error Object and throw Custom error------------------------------------------------------------------------------------
+
+// try {
+//   console.log(chandan)
+//   // throw new SyntaxError("I am an Syntex erro")
+//   // throw new ReferenceError("I am an Reference erro")
+// } catch (error) {
+//   console.log(error.name)
+//   console.log(error.message)
+//   console.log(error.stack)
+// }
+
+//finally clause------------------------------------------------------------------------------
+
+// try {
+//     let a = 10;
+//     console.log(chandan)
+//     console.log("Program ran successfully.")
+// } catch (error) {
+//     console.log("Got some error.")
+//     console.log(c);
+
+// }
+// finally{
+//     console.log("I am a good boy.")
+// }
+
+/***********************************Chapter 9 Practice***************************************************/
+// Q.1
+
+// let loadScript = (src) => {
+//   return new Promise((resolve, reject) => {
+//     let script = document.createElement("script");
+//     script.src = src;
+
+//     script.onload = () => {
+//       resolve("SRC is loaded: " + src);
+//     };
+
+//     script.onerror = () => {
+//       reject("Error loading Script: " + src);
+//     };
+//     document.body.appendChild(script);
+//   });
+// };
+// let l = loadScript(
+//   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js",
+// );
+// l.then((value) => {
+//   alert(value);
+// }).catch((error) => {
+//   alert(error);
+// });
+// console.log(l);
+
+//Q.2
+
+// let loadScript = (src) => {
+//   return new Promise((resolve, reject) => {
+//     let script = document.createElement("script");
+//     script.src = src;
+
+//     script.onload = () => resolve(`SRC is loaded: ${src}`);
+//     script.onerror = () => reject(`Error loading script: ${src}`);
+
+//     document.body.appendChild(script);
+//   });
+// };
+
+// async function main() {
+//   try {
+//     let result = await loadScript("https://cdnd.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js");
+//     alert(result);
+//   } catch (err) {
+//     alert(err);
+//   }
+// }
+
+// main();
+
+//Q.3
+
+let p = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        reject(3)
+    }, 3000)
+})
+
+let r = async() =>{
+    try {
+        let a = await p
+        console.log(a)
+ 
+    } catch (error) {
+        console.log("Reject Value: " + error)
+        
+    }
+}
+r();
