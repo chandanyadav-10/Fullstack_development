@@ -48,35 +48,51 @@
 //   .then((json) => console.log(json));
 
 //using async/await---------------------------------------------------------------------------------
-let createTodo = async (todo) => {
-  let option = {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(todo),
-  };
-  let p = await fetch("https://jsonplaceholder.typicode.com/posts", option);
-  let response = await p.json();
-  return response;
-};
+// let createTodo = async (todo) => {
+//   let option = {
+//     method: "POST",
+//     headers: {
+//       "Content-type": "application/json",
+//     },
+//     body: JSON.stringify(todo),
+//   };
+//   let p = await fetch("https://jsonplaceholder.typicode.com/posts", option);
+//   let response = await p.json();
+//   return response;
+// };
 
-let getTodo = async (id) => {
-  let r = await fetch("https://jsonplaceholder.typicode.com/posts/" + id);
-  let response = await r.json();
-  return response;
-};
+// let getTodo = async (id) => {
+//   let r = await fetch("https://jsonplaceholder.typicode.com/posts/" + id);
+//   let response = await r.json();
+//   return response;
+// };
 
-let mainFunc = async () => {
-  let todo = {
-    title: "Chandan",
-    body: "Bhai",
-    userId: 10,
-  };
-  let Todor1 = await createTodo(todo);
-  console.log(Todor1);
-  let Todor2 = await getTodo(10);
-  console.log(Todor2)
-};
+// let mainFunc = async () => {
+//   let todo = {
+//     title: "Chandan",
+//     body: "Bhai",
+//     userId: 10,
+//   };
+//   let Todor1 = await createTodo(todo);
+//   console.log(Todor1);
+//   let Todor2 = await getTodo(10);
+//   console.log(Todor2)
+// };
 
-mainFunc();
+// mainFunc();
+
+//JS Cookies----------------------------------------------------------------------------
+// console.log(document.cookie);
+// document.cookie = "name = chandan"  
+// document.cookie = "name2 = Nazeeb104205670003"
+// document.cookie = "name= chandan1041999000"
+// console.log(document.cookie) //when we write on document.cookie it does not overwrite or replace whole cookies, it add to the cookies
+
+//encodeURIComponent---------------------------------------------------------------------
+
+let key = prompt("Enter Keys")
+let value = prompt("Set your value")
+
+document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+
+console.log(document.cookie);
