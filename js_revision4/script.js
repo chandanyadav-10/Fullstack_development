@@ -1,0 +1,82 @@
+/*************************************Network Request and Storing Data***********************************/
+
+//Fetch API--------------------------------------------------------------
+
+// let wp = fetch("https://goweather.xyz/weather/India");
+// wp.then((response) => {
+//   console.log(response.status);
+//   console.log(response.ok);
+//   console.log(response.headers)
+//   return response.text();
+// }).then((response) => {
+//   console.log(response);
+// });
+
+// console.log(wp)
+
+//Post Request with fetch API----------------------------------------------------------------------
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+// my practice //
+
+// let option = {
+//   method: "POST",
+//   headers: {
+//     "Content-type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     title: "Chandan",
+//     body: "Yadav",
+//     userId: 10,
+//   }),
+// };
+// fetch("https://jsonplaceholder.typicode.com/posts", option)
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+//using async/await---------------------------------------------------------------------------------
+let createTodo = async (todo) => {
+  let option = {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(todo),
+  };
+  let p = await fetch("https://jsonplaceholder.typicode.com/posts", option);
+  let response = await p.json();
+  return response;
+};
+
+let getTodo = async (id) => {
+  let r = await fetch("https://jsonplaceholder.typicode.com/posts/" + id);
+  let response = await r.json();
+  return response;
+};
+
+let mainFunc = async () => {
+  let todo = {
+    title: "Chandan",
+    body: "Bhai",
+    userId: 10,
+  };
+  let Todor1 = await createTodo(todo);
+  console.log(Todor1);
+  let Todor2 = await getTodo(10);
+  console.log(Todor2)
+};
+
+mainFunc();

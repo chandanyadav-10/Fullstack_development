@@ -461,50 +461,50 @@
 
 //soltion 2:-----------------------------------------------------------------------------------------------
 
-// Function 1 → simulates fetching first 10 products
-const p1 = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("First 10 products");
-    }, 2000); // takes 2 seconds
-  });
-};
+// // Function 1 → simulates fetching first 10 products
+// const p1 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("First 10 products");
+//     }, 2000); // takes 2 seconds
+//   });
+// };
 
-// Function 2 → simulates fetching next 10 products
-const p2 = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Second 10 products");
-    }, 1000); // takes 1 second
-  });
-};
+// // Function 2 → simulates fetching next 10 products
+// const p2 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Second 10 products");
+//     }, 1000); // takes 1 second
+//   });
+// };
 
-// Function 3 → simulates fetching another 10 products
-const p3 = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Third 10 products");
-    }, 4000); // takes 4 seconds
-  });
-};
+// // Function 3 → simulates fetching another 10 products
+// const p3 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Third 10 products");
+//     }, 4000); // takes 4 seconds
+//   });
+// };
 
-// Async function to run all promises together
-const run = async () => {
-  console.time("run"); // start timer
+// // Async function to run all promises together
+// const run = async () => {
+//   console.time("run"); // start timer
 
-  // Start all promises at the same time (parallel execution)
-  let a1 = p1(); // promise starts immediately
-  let a2 = p2(); // promise starts immediately
-  let a3 = p3(); // promise starts immediately
+//   // Start all promises at the same time (parallel execution)
+//   let a1 = p1(); // promise starts immediately
+//   let a2 = p2(); // promise starts immediately
+//   let a3 = p3(); // promise starts immediately
 
-  // Wait for ALL promises to complete
-  // Execution will stop here until all are resolved
-  let result = await Promise.all([a1, a2, a3]);
+//   // Wait for ALL promises to complete
+//   // Execution will stop here until all are resolved
+//   let result = await Promise.all([a1, a2, a3]);
 
-  // result will be an array of resolved values
-  console.log(result);
+//   // result will be an array of resolved values
+//   console.log(result);
 
-  console.timeEnd("run"); // end timer
-};
+//   console.timeEnd("run"); // end timer
+// };
 
-run();
+// run();
