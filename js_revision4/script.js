@@ -150,6 +150,176 @@
 //   console.log(e);
 // };
 
-
 /***********************************Chapter 10 Practice**********************************************/
+// Q.1 using .then and .catch----------------------------
+
+// let fetchDogImg = () => {
+//     let div = document.getElementById("container");
+
+//     div.innerHTML = ""; // 🔥 clear previous image
+
+//     let dogImage = document.createElement("img");
+
+//     fetch("https://dog.ceo/api/breeds/image/random")
+//         .then((response) => {
+//             return response.json();
+//         })
+//         .then((data) => {
+//             dogImage.src = data.message;  // ✅ correct URL
+//             dogImage.style.width = "300px"; // optional styling
+//             div.appendChild(dogImage);   // ✅ append image
+
+//         })
+//         .catch((error) => {
+//             console.log("Error fetching image:", error);
+//         });
+// };
+// // fetchDogImg();
+
+// let fetchBtn = document.getElementById("fetchDog");
+// fetchBtn.addEventListener('click', fetchDogImg)
+
+// Q.1 using async and await-----------------------------------------------------------------
+
+// function fetchBtn() {
+
+//     let fetchDogImg = async () => {
+//         let div = document.getElementById("container");
+
+//         div.innerHTML = ""; // clear previous image
+
+//         let dogImage = document.createElement("img");
+
+//         try {
+//             let imageAPI = await fetch("https://dog.ceo/api/breeds/image/random");
+
+
+
+//             // 🔥 check if response is OK (very important)
+//             if (!imageAPI.ok) {
+//                 throw new Error("Network response was not ok");
+//             }
+
+//             console.log(imageAPI.status)
+//             console.log(imageAPI.ok)
+
+//             let imageResponse = await imageAPI.json();
+
+//             dogImage.src = imageResponse.message;
+//             dogImage.style.width = "300px";
+//             div.appendChild(dogImage);
+
+//         } catch (error) {
+//             console.log("Error:", error);
+
+//             // show error to user (better UX)
+//             div.innerHTML = "<p>❌ Failed to load dog image. Try again!</p>";
+//         }
+//     };
+
+//     fetchDogImg();
+
+// };
+
+// Better Approach------------------------------------------------------------------------------
+// Why better?----
+// Separation of HTML & JS-----
+
+// let fetchDogImg = async () => {
+//     let div = document.getElementById("container");
+
+//     div.innerHTML = ""; // clear previous image
+
+//     let dogImage = document.createElement("img");
+
+//     try {
+//         let imageAPI = await fetch("https://dog.ceo/api/breeds/image/random");
+
+
+
+//         // 🔥 check if response is OK (very important)
+//         if (!imageAPI.ok) {
+//             throw new Error("Network response was not ok");
+//         }
+
+//         console.log(imageAPI.status)
+//         console.log(imageAPI.ok)
+
+//         let imageResponse = await imageAPI.json();
+
+//         dogImage.src = imageResponse.message;
+//         dogImage.style.width = "300px";
+//         div.appendChild(dogImage);
+
+//     } catch (error) {
+//         console.log("Error:", error);
+
+//         // show error to user (better UX)
+//         div.innerHTML = "<p>❌ Failed to load dog image. Try again!</p>";
+//     }
+// };
+
+
+// document.getElementById("fetchDog").addEventListener("click", fetchDogImg);
+
+
+
+// Q.2------------------------
+
+// 🔥 Fetch notes automatically when page loads
+window.onload = function () {
+  displayNotes();
+};
+
+// Q.2 Add note
+function addNote() {
+  let input = document.getElementById("noteInput");
+  let note = input.value;
+
+  if (note === "") {
+    alert("Write something!");
+    return;
+  }
+
+  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+  notes.push(note);
+
+  localStorage.setItem("notes", JSON.stringify(notes));
+
+  input.value = "";
+
+  displayNotes();
+}
+
+// Q.3 Display (fetch) notes
+function displayNotes() {
+  let notesList = document.getElementById("notesList");
+  notesList.innerHTML = "";
+
+  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+  notes.forEach((note, index) => {
+    let li = document.createElement("li");
+
+    li.innerHTML = `
+      ${note}
+      <button onclick="deleteNote(${index})">❌</button>
+    `;
+
+    notesList.appendChild(li);
+  });
+}
+
+// Q.4 Delete note
+function deleteNote(index) {
+  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+  notes.splice(index, 1);
+
+  localStorage.setItem("notes", JSON.stringify(notes));
+
+  displayNotes();
+}
+
 
