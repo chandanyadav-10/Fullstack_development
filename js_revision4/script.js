@@ -83,16 +83,73 @@
 
 //JS Cookies----------------------------------------------------------------------------
 // console.log(document.cookie);
-// document.cookie = "name = chandan"  
+// document.cookie = "name = chandan"
 // document.cookie = "name2 = Nazeeb104205670003"
 // document.cookie = "name= chandan1041999000"
 // console.log(document.cookie) //when we write on document.cookie it does not overwrite or replace whole cookies, it add to the cookies
 
 //encodeURIComponent---------------------------------------------------------------------
 
-let key = prompt("Enter Keys")
-let value = prompt("Set your value")
+// let key = prompt("Enter Keys")
+// let value = prompt("Set your value")
 
-document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+// document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+// console.log(document.cookie);
 
-console.log(document.cookie);
+//localStorage-------------------------------------------------------------------------------
+
+// let key = prompt("Enter key that you want set");
+// let value = prompt("Enter value that you want to get");
+
+// localStorage.setItem(key, value);
+
+// console.log(`Value at ${key} is ${localStorage.getItem(key)}`);
+
+// console.log(localStorage.length)
+
+// if(key == "red" || key == "color"){
+//     localStorage.removeItem(key)
+// }
+
+// if(key == 0){
+//     localStorage.clear()
+// }
+
+// localStorage.key(0)
+// 'class'
+// localStorage.key(1)
+// 'name'
+// localStorage.key(2)
+// 'c'
+// localStorage.key(3)
+// 'b'
+// localStorage.key(4)
+// null
+
+// localStorage.two = 2
+// alert(localStorage.two)
+// delete localStorage.two
+
+// sessionStorage------------------------------------------------------------------------------------
+
+// sessionStorage.setItem("name", "chandan")
+// undefined
+// sessionStorage.getItem("name")
+// 'chandan'
+// sessionStorage.getItem("name")
+// 'chandan'
+// sessionStorage.removeItem("name")
+// undefined
+// sessionStorage.clear()
+// undefined
+
+// storage Event----------------------------------------------------------------------------------------
+
+// window.onstorage = (e) => {
+//   alert("changed");
+//   console.log(e);
+// };
+
+
+/***********************************Chapter 10 Practice**********************************************/
+
