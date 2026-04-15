@@ -33,10 +33,8 @@ window.onload = function () {
     alert("Please login first!");
     window.location.href = "index.html";
   } else {
-    document.getElementById("user").innerText =
-      "Hello " + user + " Welcome Back!";
+    document.getElementById("user").innerText = "Hello " + user;
   }
-
   const temp = sessionStorage.getItem("tempItem");
   if (temp) {
     document.getElementById("item").value = temp;
@@ -51,7 +49,7 @@ function addToCart() {
 
   if (!item.trim()) return;
 
-  saveTempData();
+  saveTempData(item);
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -80,21 +78,22 @@ function loadCart() {
     btn.innerText = "x";
     btn.classList.add("delete-btn");
 
-    // ✅ ADD THIS (important)
-    btn.onclick = function () {
-      removeItem(index);
-    };
-
     li.appendChild(text);
     li.appendChild(btn);
 
     list.appendChild(li);
+
+    // ✅ ADD THIS (important)
+    btn.addEventListener("click", function () {
+      removeItem(index);
+    });
+
   });
 }
 /****************************************SessionStorage (Temporary Data Example)******************************/
 
-function saveTempData() {
-  const item = document.getElementById("item").value;
+function saveTempData(item) {
+  // const item = document.getElementById("item").value;
   sessionStorage.setItem("tempItem", item);
 }
 
