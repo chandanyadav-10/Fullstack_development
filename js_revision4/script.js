@@ -266,60 +266,60 @@
 
 // Q.2------------------------
 
-// 🔥 Fetch notes automatically when page loads
-window.onload = function () {
-  displayNotes();
-};
+// // 🔥 Fetch notes automatically when page loads
+// window.onload = function () {
+//   displayNotes();
+// };
 
-// Q.2 Add note
-function addNote() {
-  let input = document.getElementById("noteInput");
-  let note = input.value;
+// // Q.2 Add note
+// function addNote() {
+//   let input = document.getElementById("noteInput");
+//   let note = input.value;
 
-  if (note === "") {
-    alert("Write something!");
-    return;
-  }
+//   if (note === "") {
+//     alert("Write something!");
+//     return;
+//   }
 
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+//   let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-  notes.push(note);
+//   notes.push(note);
 
-  localStorage.setItem("notes", JSON.stringify(notes));
+//   localStorage.setItem("notes", JSON.stringify(notes));
 
-  input.value = "";
+//   input.value = "";
 
-  displayNotes();
-}
+//   displayNotes();
+// }
 
-// Q.3 Display (fetch) notes
-function displayNotes() {
-  let notesList = document.getElementById("notesList");
-  notesList.innerHTML = "";
+// // Q.3 Display (fetch) notes
+// function displayNotes() {
+//   let notesList = document.getElementById("notesList");
+//   notesList.innerHTML = "";
 
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+//   let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-  notes.forEach((note, index) => {
-    let li = document.createElement("li");
+//   notes.forEach((note, index) => {
+//     let li = document.createElement("li");
 
-    li.innerHTML = `
-      ${note}
-      <button onclick="deleteNote(${index})">❌</button>
-    `;
+//     li.innerHTML = `
+//       ${note}
+//       <button onclick="deleteNote(${index})">❌</button>
+//     `;
 
-    notesList.appendChild(li);
-  });
-}
+//     notesList.appendChild(li);
+//   });
+// }
 
-// Q.4 Delete note
-function deleteNote(index) {
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+// // Q.4 Delete note
+// function deleteNote(index) {
+//   let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-  notes.splice(index, 1);
+//   notes.splice(index, 1);
 
-  localStorage.setItem("notes", JSON.stringify(notes));
+//   localStorage.setItem("notes", JSON.stringify(notes));
 
-  displayNotes();
-}
+//   displayNotes();
+// }
 
 
