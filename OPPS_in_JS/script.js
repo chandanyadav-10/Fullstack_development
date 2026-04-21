@@ -368,7 +368,7 @@
 //     } else {
 //       console.log(`${this.real} - ${Math.abs(this.imaginary)}i`);
 //     }
-    
+
 //   }
 // }
 
@@ -378,47 +378,103 @@
 // cnum2.complexNumber();
 
 // Q.5--
-class ComplexNumber {
-  constructor(real, imaginary) {
-    this._real = real;
-    this._imaginary = imaginary;
-  }
+// class ComplexNumber {
+//   constructor(real, imaginary) {
+//     this._real = real;
+//     this._imaginary = imaginary;
+//   }
 
-  // Getter for real part
-  get real() {
-    return this._real;
-  }
+//   // Getter for real part
+//   get real() {
+//     return this._real;
+//   }
 
-  // Setter for real part
-  set real(value) {
-    this._real = value;
-  }
+//   // Setter for real part
+//   set real(value) {
+//     this._real = value;
+//   }
 
-  // Getter for imaginary part
-  get imaginary() {
-    return this._imaginary;
-  }
+//   // Getter for imaginary part
+//   get imaginary() {
+//     return this._imaginary;
+//   }
 
-  // Setter for imaginary part
-  set imaginary(value) {
-    this._imaginary = value;
-  }
+//   // Setter for imaginary part
+//   set imaginary(value) {
+//     this._imaginary = value;
+//   }
 
-  // Method to display complex number
-  display() {
-    console.log(`${this._real} + ${this._imaginary}i`);
+//   // Method to display complex number
+//   display() {
+//     console.log(`${this._real} + ${this._imaginary}i`);
+//   }
+// }
+
+// // Usage
+// let num = new ComplexNumber(3, 4);
+
+// // Getting values
+// console.log(num.real);        // 3
+// console.log(num.imaginary);   // 4
+
+// // Setting values
+// num.real = 5;
+// num.imaginary = 6;
+
+// num.display(); // 5 + 6i
+
+// Q. 3-----
+
+// class Human {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   introduce() {
+//     console.log(`Hi, I am ${this.name}`);
+//   }
+// }
+
+// class Student extends Human {
+//   constructor(name, course) {
+//     super(name); // call parent constructor
+//     this.course = course;
+//   }
+
+//   // 🔥 Method Overriding
+//   introduce() {
+//     console.log(`Hi, I am ${this.name} and I study ${this.course}`);
+//   }
+// }
+
+// // Usage
+// let s1 = new Student("Chandan", "MSc.IT");
+
+// s1.introduce();
+
+// // Q.4--------------------
+// console.log(s1 instanceof Human)
+// console.log(s1 instanceof Student)
+
+class Human {
+  constructor(name) {
+    this._name = name;
+  }
+  walk() {
+    console.log(this._name + " name human is walking");
+  }
+  set name(newName) {
+    console.log("Setter is called")
+    this._name = newName;
+  }
+  get name() {
+    console.log("Getter is called");
+    return this._name;
   }
 }
 
-// Usage
-let num = new ComplexNumber(3, 4);
-
-// Getting values
-console.log(num.real);        // 3
-console.log(num.imaginary);   // 4
-
-// Setting values
-num.real = 5;
-num.imaginary = 6;
-
-num.display(); // 5 + 6i
+let n = new Human("Chandan");
+n.walk();
+console.log(n.name)
+n._name = "Sandesh"
+console.log(n.name)
