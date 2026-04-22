@@ -456,25 +456,81 @@
 // console.log(s1 instanceof Human)
 // console.log(s1 instanceof Student)
 
-class Human {
-  constructor(name) {
-    this._name = name;
+// class Human {
+//   constructor(name) {
+//     this._name = name;
+//   }
+//   walk() {
+//     console.log(this._name + " name human is walking");
+//   }
+//   set name(newName) {
+//     console.log("Setter is called")
+//     this._name = newName;
+//   }
+//   get name() {
+//     console.log("Getter is called");
+//     return this._name;
+//   }
+// }
+
+// let n = new Human("Chandan");
+// n.walk();
+// console.log(n.name)
+// n._name = "Sandesh"
+// console.log(n.name)
+
+// setter/getter and static example for understanding this concept more clearly---------------------------------------------
+class User {
+  static userCount = 0;   // shared across all users
+
+  constructor(username, password) {
+    this.username = username;
+    this._password = password;  // protected
+    User.userCount++;  // increase count when new user created
   }
-  walk() {
-    console.log(this._name + " name human is walking");
+
+  // Getter (read password safely)
+  get password() {
+    return "********";  // hide real password
   }
-  set name(newName) {
-    console.log("Setter is called")
-    this._name = newName;
+
+  // Setter (update password with validation)
+  set password(newPass) {
+    if (newPass.length < 6) {
+      console.log("Password too short!");
+    } else {
+      this._password = newPass;
+      console.log("Password updated successfully");
+    }
   }
-  get name() {
-    console.log("Getter is called");
-    return this._name;
+
+  // Normal method
+  login(pass) {
+    if (pass === this._password) {
+      console.log(this.username + " logged in ✅");
+    } else {
+      console.log("Wrong password ❌");
+    }
+  }
+
+  // Static method (class-level logic)
+  static totalUsers() {
+    console.log("Total users: " + User.userCount);
   }
 }
 
-let n = new Human("Chandan");
-n.walk();
-console.log(n.name)
-n._name = "Sandesh"
-console.log(n.name)
+// Creating objects (real users)
+let user1 = new User("Chandan", "123456");
+let user2 = new User("Rahul", "abcdef");
+
+// Using methods
+user1.login("123456");
+
+// Using setter
+user1.password = "newpass123";
+
+// Using getter
+console.log(user1.password);
+
+// Static method
+User.totalUsers();
