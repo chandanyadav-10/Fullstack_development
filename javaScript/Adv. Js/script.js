@@ -143,7 +143,6 @@ A closure is when a function remembers variables from where it was created, even
 👉 In simple words:
 “Function + its remembered data = Closure” */
 
-
 // Basic Example
 
 // function outer() {
@@ -185,7 +184,7 @@ Because of lexical scope
 // }
 
 // const sayHello = greet("Chandan");
-// sayHello(); // Hello Chandan 
+// sayHello(); // Hello Chandan
 
 // 👉 Even after greet() finishes, name is still remembered.
 
@@ -226,7 +225,6 @@ Because of lexical scope
 
 // 👉 x is remembered → closure
 
-
 // 3. setTimeout example (important interview)
 
 // function test() {
@@ -263,3 +261,70 @@ Because of lexical scope
 // // console.log(x.name, x.exp)
 
 // x.show();
+
+/* ***************************Chapter 12 JS Practice**************************************** */
+
+// Q.1.
+
+function hello() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hello");
+    }, 2000);
+  });
+}
+function world() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("World");
+    }, 2000);
+  });
+}
+
+async function p() {
+  let a = await hello();
+  console.log(a);
+  let b = await world();
+  console.log(b);
+}
+p();
+
+// Q.2
+
+let arr = [4, 5, 8, 9, 6];
+
+let avg = (a, b, c, d, e) => {
+  return (a, b, c, d, e / 5);
+};
+
+console.log(avg(...arr));
+
+// Q.3
+
+const a = (text, n) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(text);
+    }, 1000 * n);
+  });
+};
+
+(async () => {
+  let c = await a("Executing in 2 seconds ", 2);
+  console.log(c);
+  let b = await a("Executing in 4 seconds ", 4);
+  console.log(b);
+})();
+
+// Q.4
+function calculateSI(p, r, t) {
+  return (p * r * t) / 100;
+}
+
+// Example usage:
+let principal = 1000;
+let rate = 5;
+let time = 2;
+
+let simpleInterest = calculateSI(principal, rate, time);
+console.log("Simple Interest =", simpleInterest);
