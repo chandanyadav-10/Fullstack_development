@@ -1,61 +1,34 @@
-// CommonJS
-const {generatePDF} = require('pdf-node');
-const fs = require('fs');
-const path = require('path');
+// commonjs module----------------------------------------------------------------------
 
-// Or ES Modules
-// import { generatePDF } from 'pdf-node';
-// import { fileURLToPath } from 'url';
-// import { dirname } from 'path';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+// const b = require("./module1")
+// console.log(typeof b)
 
-async function createPDF() {
-	// Read HTML template
-	const html = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
+// const hello = require("./module1") // hello contains obj
 
-	// Sample data
-	const users = [
-		{name: 'John Doe', age: 30, email: 'john@example.com'},
-		{name: 'Jane Smith', age: 25, email: 'jane@example.com'}
-	];
+// hello.hello()
+// hello.goodMorning("Chandan")
+// hello.goodMorning("Fandan")
+// hello.goodMorning("Handan")
+// hello.goodMorning("Landon")
+// hello.goodMorning("Chamfan")
 
-	// PDF options
-	const options = {
-		format: 'A4',
-		orientation: 'portrait',
-		border: '10mm',
-		header: {
-			height: '15mm',
-			contents:
-				'<div style="text-align: center;">Confidential Report</div>'
-		},
-		footer: {
-			height: '15mm',
-			contents: {
-				default:
-					'<div style="text-align: center; color: #b02525;">Page {{page}} of {{pages}}</div>'
-			}
-		}
-	};
+// const {hello, goodMorning} = require("./module1") // using destructuring
 
-	// Generate PDF
-	try {
-		const result = await generatePDF({
-			html: html,
-			data: {
-				users: users,
-				date: new Date().toLocaleDateString()
-			},
-			path: './user-report.pdf',
-			type: 'pdf',
-			pdfOptions: options
-		});
+// hello()
+// goodMorning("Chandan")
+// goodMorning("Fandan")
+// goodMorning("Handan")
+// goodMorning("Landon")
+// goodMorning("Chamfan")
 
-		console.log('PDF generated successfully:', result.filename);
-	} catch (error) {
-		console.error('Error generating PDF:', error);
-	}
-}
+// ES6 Module----------------------------------------------------------------------
 
-createPDF();
+import Chandan, {hello, goodMorning} from "./module2.js";
+
+hello()
+goodMorning("Chandan")
+goodMorning("Fandan")
+goodMorning("Handan")
+goodMorning("Landon")
+goodMorning("Chamfan")
+Chandan()
