@@ -264,67 +264,74 @@ Because of lexical scope
 
 /* ***************************Chapter 12 JS Practice**************************************** */
 
-// Q.1.
+// // Q.1.
 
-function hello() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Hello");
-    }, 2000);
-  });
-}
-function world() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("World");
-    }, 2000);
-  });
-}
+// function hello() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Hello");
+//     }, 2000);
+//   });
+// }
+// function world() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("World");
+//     }, 2000);
+//   });
+// }
 
-async function p() {
-  let a = await hello();
-  console.log(a);
-  let b = await world();
-  console.log(b);
-}
-p();
+// async function p() {
+//   let a = await hello();
+//   console.log(a);
+//   let b = await world();
+//   console.log(b);
+// }
+// p();
 
-// Q.2
+// // Q.2
 
-let arr = [4, 5, 8, 9, 6];
+// let arr = [4, 5, 8, 9, 6];
 
-let avg = (a, b, c, d, e) => {
-  return (a, b, c, d, e / 5);
-};
+// let avg = (a, b, c, d, e) => {
+//   return (a, b, c, d, e / 5);
+// };
 
-console.log(avg(...arr));
+// console.log(avg(...arr));
 
-// Q.3
+// // Q.3
 
-const a = (text, n) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(text);
-    }, 1000 * n);
-  });
-};
+// const a = (text, n) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(text);
+//     }, 1000 * n);
+//   });
+// };
 
-(async () => {
-  let c = await a("Executing in 2 seconds ", 2);
-  console.log(c);
-  let b = await a("Executing in 4 seconds ", 4);
-  console.log(b);
-})();
+// (async () => {
+//   let c = await a("Executing in 2 seconds ", 2);
+//   console.log(c);
+//   let b = await a("Executing in 4 seconds ", 4);
+//   console.log(b);
+// })();
 
-// Q.4
-function calculateSI(p, r, t) {
-  return (p * r * t) / 100;
-}
+// // Q.4
+// function calculateSI(p, r, t) {
+//   return (p * r * t) / 100;
+// }
 
-// Example usage:
-let principal = 1000;
-let rate = 5;
-let time = 2;
+// // Example usage:
+// let principal = 1000;
+// let rate = 5;
+// let time = 2;
 
-let simpleInterest = calculateSI(principal, rate, time);
-console.log("Simple Interest =", simpleInterest);
+// let simpleInterest = calculateSI(principal, rate, time);
+// console.log("Simple Interest =", simpleInterest);
+
+//Regular Expression-------------------------------------------------------------------------------
+
+// https://regexr.com/ Best website to learn regular expression
+const regex = /(Chandan){2}/gi
+const text = "Chandanchandan is a very very nice awesome very boy good very good boy apple apple"
+console.log(text.replace(regex, "Chandan"))
