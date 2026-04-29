@@ -23,12 +23,12 @@
 
 // ES6 Module----------------------------------------------------------------------
 
-import Chandan, {hello, goodMorning} from "./module2.js";
+// import Chandan, {hello, goodMorning} from "./module2.js";
 
-hello()
-goodMorning("Chandan")
-goodMorning("Fandan")
-goodMorning("Handan")
-goodMorning("Landon")
-goodMorning("Chamfan")
-Chandan()
+// hello()
+// goodMorning("Chandan")
+// goodMorning("Fandan")
+// goodMorning("Handan")
+// goodMorning("Landon")
+// goodMorning("Chamfan")
+// Chandan()
