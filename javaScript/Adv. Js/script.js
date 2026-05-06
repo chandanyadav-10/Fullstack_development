@@ -23,7 +23,7 @@
 
 // Destructuring and Spread Operator-------------------------------------------------------------------------
 
-// let arr = [3, 4, 6, 8, 10]
+let arr = [3, 4, 6, 8, 10]
 // let [a, b, c, d, e] = arr
 // console.log(a, b, c, d, e)
 
@@ -117,6 +117,28 @@
 
 // var a = 9; // Declaration hoisted to the top but initialization is not
 // console.log(a)
+
+// with let------------------------------------------------------------------
+// console.log(a); // ❌ Error
+
+// let a = 10;
+
+// console.log(a); // ✅ 10
+
+// with const -----------------------------------------------------------------------
+// console.log(b); // ❌ Error
+
+// const b = 20;
+
+// console.log(b); // ✅ 20
+
+// Start of scope
+//    ↓
+// TDZ starts
+//    ↓
+// let a = 10;   ← TDZ ends here
+//    ↓
+// Now variable usable
 
 // Closure in JS----------------------------------------------------------------------
 
@@ -332,6 +354,6 @@ Because of lexical scope
 //Regular Expression-------------------------------------------------------------------------------
 
 // https://regexr.com/ Best website to learn regular expression
-const regex = /(Chandan){2}/gi
-const text = "Chandanchandan is a very very nice awesome very boy good very good boy apple apple"
-console.log(text.replace(regex, "Chandan"))
+// const regex = /(Chandan){2}/gi
+// const text = "Chandanchandan is a very very nice awesome very boy good very good boy apple apple"
+// console.log(text.replace(regex, "Chandan"))
