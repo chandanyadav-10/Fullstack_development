@@ -1,0 +1,148 @@
+/* **************************************Types of CSS Selectors************************** */
+/* 1. Element Selector */
+
+/* h1 {
+  color: blue;
+}
+
+p {
+  color: green;
+} */
+
+/* 2. ID Selector */
+
+/* #title {
+  color: red;
+} */
+
+/* 3. Class Selector */
+
+/* .text {
+  color: purple;
+} */
+
+/* 4. Universal Selector */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 5. Group Selector */
+
+/* h1, p, div {
+  color: blue;
+} */
+
+/* 6. Descendant Selector */
+/* div p {
+  color: red;
+} */
+
+/* 7. Child Selector */
+
+/* div > p {
+  color: green;
+} */
+
+/* 8. Attribute Selector */
+
+/* input[type="text"] {
+  border: 2px solid red;
+} */
+
+/* 9. Pseudo-class Selector */
+
+/* button:hover {
+  background-color: black;
+  color: white;
+} */
+
+/* 10. Pseudo-element Selector */
+/* p::first-letter {
+  font-size: 40px;
+  color: red;
+} */
+
+/* More Examples of Pseudo Selectors */
+
+/* 1. :hover */
+
+/* button:hover {
+  background-color: red;
+  color: white;
+} */
+
+/* 2. :focus */
+
+/* input:focus {
+  border: 3px solid blue;
+  outline: none;
+} */
+
+/* 3. :first-child */
+
+/* li:first-child {
+  color: red;
+} */
+
+/* 4. :last-child */
+
+/* li:last-child {
+  color: blue;
+} */
+
+/* 5. :nth-child() */
+
+/* li:nth-child(2) {
+  color: green;
+} */
+
+/* 6. :checked */
+
+/* input:checked {
+  width: 30px;
+  height: 30px;
+} */
+
+/* 7. :disabled */
+/* 
+input:disabled {
+  background-color: lightgray;
+} */
+
+/* 8. :enabled */
+
+/* input:enabled {
+  border: 2px solid green;
+} */
+
+/* 9. :required  */
+
+/* input:required {
+  border: 2px solid red;
+} */
+
+/* 10. :link */
+
+/* a:link {
+  color: rgb(0, 255, 60);
+} */
+
+/* 11. :visited */
+
+/* a:visited {
+  color: purple;
+} */
+
+/* 12. :active */
+
+/* button:active {
+  background-color: red;
+} */
+
+/* 13. :not()  */
+
+p:not(.p) {
+  color: gray;
+}
