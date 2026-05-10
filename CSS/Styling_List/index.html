@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styling List using CSS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        display: flex;
+        background-color: aliceblue;
+        /* border: 0.5px solid black; */
+        border-radius: 5px;
+        min-height: 20vh;
+        align-items: center;
+        box-shadow: -3px -2px 4px 0px black;
+      }
+      nav ul li {
+        list-style: none;
+        list-style-type: "😎";
+        margin-left: 3rem;
+        list-style-position: inside;
+        background-color: antiquewhite;
+        padding: 5px;
+        border-radius: 5px;
+        /* list-style-image: url; */
+      }
+      nav ul li:hover {
+        background: linear-gradient(to right, rgb(228, 185, 185), rgb(228, 228, 234));
+       cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </body>
+</html>
