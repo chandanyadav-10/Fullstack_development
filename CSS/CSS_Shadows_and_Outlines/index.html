@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Shadows and Outlines</title>
+    <style>
+      .box {
+        border: 2px solid black;
+        padding: 34px;
+        box-shadow: 11px 6px 7px 3px #65451f;
+        text-shadow: 11px 6px 7px 3px #408928;
+      }
+      h1 {
+        text-shadow:
+          1px 1px 2px red,
+          2px 2px 5px blue;
+        text-align: center;
+      }
+
+      /* h1 {
+        color: cyan;
+        text-shadow:
+          0 0 5px cyan,
+          0 0 10px cyan,
+          0 0 20px cyan;
+          text-align: center;
+      } */
+      .outline {
+        outline: 2px solid green;
+        outline-offset: 5px;
+        border: 2px solid greenyellow;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Shadows and Outlines</h1>
+    <div class="box">I am a Shadow Box</div>
+    <p class="outline">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quae ad
+      ipsa sapiente nisi voluptate odit, assumenda, similique sit quaerat enim
+      laboriosam dolore soluta! Eius voluptatem, sint pariatur nostrum numquam
+      fugiat quibusdam consequatur aspernatur maxime nisi voluptatum Facere
+      odit, harum cumque quis saepe ipsa quidem libero nihil.
+    </p>
+  </body>
+</html>
