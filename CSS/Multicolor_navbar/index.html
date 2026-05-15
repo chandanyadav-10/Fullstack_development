@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-color Navbar</title>
+    <style>
+      :root {
+        --primary-color: aliceblue;
+        --secondary-color: antiquewhite;
+        --shadow: -3px -2px 4px 0px black;
+        --hover-color: linear-gradient(
+          to right,
+          rgb(228, 185, 185),
+          rgb(228, 228, 234)
+        );
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        display: flex;
+        background-color: var(--primary-color);
+        /* border: 0.5px solid black; */
+        border-radius: 5px;
+        min-height: 20vh;
+        align-items: center;
+        box-shadow: var(--shadow);
+      }
+      nav ul li {
+        list-style: none;
+        list-style-type: "😎";
+        margin-left: 3rem;
+        list-style-position: inside;
+        background-color: var(--secondary-color);
+        padding: 5px;
+        border-radius: 5px;
+        /* list-style-image: url; */
+      }
+      nav ul li:hover {
+        background: var(--hover-color);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </body>
+</html>
