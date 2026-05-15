@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Media Queries</title>
+    <style>
+      body {
+        background-color: chartreuse;
+      }
+      /* @media only screen and (min-width: 400px){
+        body{
+            background-color: blueviolet
+        };
+      } */
+
+      /* @media only screen and (max-width: 400px){
+        body{
+            background-color: rgb(43, 226, 137)
+        };
+      } */
+
+      @media screen and (orientation: landscape) {
+        body {
+          background-color: cadetblue;
+        }
+      }
+      @media screen and (orientation: portrait) {
+        body {
+          background-color: rgb(95, 160, 110);
+          /* border: 2px solid green; */
+        }
+        .boxes {
+          flex-direction: column;
+        }
+      }
+
+      .boxes {
+        display: flex;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+        padding: 5px;
+        background-color: azure;
+        border: 2px solid black;
+      }
+
+      @media screen and (orientation: portrait) {
+        .box {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>I am the media queries box</div>
+
+    <div class="boxes">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
