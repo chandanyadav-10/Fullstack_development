@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More on CSS Seclector</title>
+    <style>
+      /* .box:first-child {
+        background-color: red;
+      } */
+
+      /* .box:nth-child(2) {
+        background-color: blue;
+      } */
+
+      .boxes * {
+        color: rgb(147, 147, 200);
+        border: 1px solid black;
+      }
+
+      /* .box::first-line {
+        color: cornflowerblue;
+      } */
+
+      /* p,.box,[last-div="lastbox"] {
+        color: red;
+        background-color: aliceblue;
+      } */
+      /* 
+      .box:nth-last-child(2){
+        color: blue;
+      } */
+      /* .box:nth-child(even) {
+        background-color: brown;
+        color: white;
+      } */
+      /* .box:nth-child(odd) {
+        background-color: rgb(42, 75, 165);
+        color: white;
+      } */
+
+      /* .boxes::before {
+        content: "Hey I am added before main content.";
+        color: aqua;
+      }
+
+      .boxes::after{
+        content: "I am added after main content";
+        color: aquamarine;
+      } */
+      /* .boxes::selection {
+        background-color: black;
+        color: aquamarine;
+      } */
+      /* ::selection {
+        background-color: blue;
+        color: aliceblue;
+      } */
+
+      /* .box::first-letter {
+        color: red;
+        font-size: 50px;
+      } */
+       
+      /* input {
+        padding: 0;
+        border: 0;
+        outline: 0;
+        border-radius: 5px;
+        border: 2px solid green;
+      }
+      input::placeholder {
+        color: rgb(7, 151, 103);
+        background-color: black;
+      } */
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Type your name here..." height="400" />
+    <div class="boxes">
+      <div class="box">I am a div box</div>
+      <div class="box">
+        I am a div box Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit nam minus magnam hic recusandae placeat dolor dolore possimus ex
+        ipsam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
+        quisquam atque sint totam labore debitis expedita laudantium natus nemo,
+        a iure repellendus aut possimus. Architecto veritatis quas mollitia quis
+        totam et sapiente nobis maxime quos officia, fugit dolorum sunt
+        praesentium.
+      </div>
+      <div class="box" last-div="lastbox">I am a div box</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+        cupiditate, nostrum explicabo perferendis ea molestiae illo ducimus
+        earum quam nihil. Exercitationem magni ea reprehenderit fugiat.
+        Architecto officiis doloribus deleniti aspernatur?
+      </p>
+    </div>
+  </body>
+</html>
