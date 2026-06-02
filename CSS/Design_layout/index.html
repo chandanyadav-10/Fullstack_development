@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Design</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        overflow-x: hidden;
+        min-height: 200dvh;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        background-color: #106ebe;
+        color: #0ffcbe;
+        height: 60px;
+        width: 100vw;
+        padding: 5px;
+        position: sticky;
+        top: 0;
+      }
+      .logo {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #0ffcbe;
+        border-radius: 30px;
+        left: 5px;
+      }
+      ul {
+        display: flex;
+      }
+      ul li {
+        list-style: none;
+        margin: 15px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      ul li:hover {
+        color: yellowgreen;
+        cursor: pointer;
+        outline: 2px solid rgb(49, 232, 12);
+        
+      }
+      .main-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .box {
+        width: 80px;
+        height: 100px;
+        border: 2px solid rgb(154, 39, 39);
+      }
+      .boxez {
+        background-color: #8fc4b6f7;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        height: 80vh;
+        width: 100%;
+      }
+      .orange-box {
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        bottom: 15px;
+        right: 5px;
+        background-color: orange;
+        border-radius: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <svg class="logo">
+        <image
+          href="https://plus.unsplash.com/premium_photo-1775807385673-5328bdef3118?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D"
+        ></image>
+      </svg>
+      <nav class="nav">
+        <ul>
+          <li>Home</li>
+          <li>Services</li>
+          <li>Contact</li>
+          <li>About</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-layout">
+      <div class="boxez">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <svg class="orange-box">
+        <image
+          href="https://plus.unsplash.com/premium_photo-1775807385673-5328bdef3118?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D"
+          width="300"
+          height="200"
+        ></image>
+      </svg>
+    </main>
+    <footer>
+      <a href=""> <img src="" alt="" /></a>
+      <a href=""> <img src="" alt="" /></a>
+      <a href=""> <img src="" alt="" /></a>
+      <a href=""> <img src="" alt="" /></a>
+    </footer>
+  </body>
+</html>

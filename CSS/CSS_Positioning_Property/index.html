@@ -9,42 +9,63 @@
         margin: 0;
         padding: 0;
       }
+
       .box {
+        height: 433px;
         width: 80vw;
-        height: 130px;
-        margin: 5px;
-        padding: 5px;
+        padding: 3px;
+        margin: 3px;
         border: 2px solid black;
       }
+
       .box1 {
         background-color: aqua;
-        /* position: relative;
-        top: 11px;
-        left: 37px; */
-      }
-      .box2 {
-        background-color: aquamarine;
-      }
-      .box3 {
-        background-color: antiquewhite;
+        /* position: sticky;
+            top:0px;
+            height: 111px;
+            width:100%;
+            margin: 0;
+            padding: 0; */
         position: absolute;
         top: 0px;
+        left: 3px;
       }
+
+      .box2 {
+        background-color: azure;
+        /* position: relative;
+            top: 34px;
+            left: 56px; */
+      }
+
+      .box3 {
+        background-color: antiquewhite;
+        /* position: fixed;
+            bottom: 0px;
+            left:8vw;
+            height: 111px; */
+      }
+
       .box4 {
-        background-color: blueviolet;
+        background-color: purple;
       }
-      .parent-box {
-        width: 82vw;
-        height: 100%;
-        margin: 34px;
+
+      .parent {
         padding: 43px;
-        border: 2px solid green;
-        position: absolute;
+        margin: 34px;
+        border: 3px solid purple;
+        /* position: relative; */
+
+        /* Exception: transform, filter, or perspective properties can also make an element appear as positioned */
+        /* transform: translate(0); */
+        /* filter: invert(0); */
+        /* perspective: 0em; */
       }
     </style>
   </head>
+
   <body>
-    <div class="parent-box">
+    <div class="parent">
       <div class="box box1"></div>
       <div class="box box2"></div>
       <div class="box box3"></div>
