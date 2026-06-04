@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Using Flexbox</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif, serif;
+    }
+
+    .navbar {
+      /* height: 48px; */
+      background-color: #f6f6f6;;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px;
+      padding: 30px;
+      border: 1px solid #cecece;
+      border-radius: 4px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .download{
+        padding: 10px;
+        border: none;
+        background-color: #ebdc14;
+        border-radius: 4px;
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <div>
+        <span class="et_pb_image_wrap"
+          ><img
+            decoding="async"
+            width="150"
+            height="59"
+            src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg"
+            alt="UE Logo"
+            title="UE-logo"
+            class="wp-image-27592567 entered lazyloaded"
+            data-lazy-src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg"
+            data-ll-status="loaded"
+        /></span>
+      </div>
+      <div class="nav">
+        <nav class="nav-menu">
+          <ul>
+            <li>Products</li>
+            <li>Buy</li>
+            <li>Renew</li>
+            <li>Support</li>
+            <li>Learn</li>
+            <li>Company</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="d-l-s">
+        <button class="download">Download</button>
+        <span class="language">English</span>
+        <span class="search"><input type="text" /></span>
+      </div>
+    </div>
+  </body>
+</html>
