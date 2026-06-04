@@ -14,7 +14,7 @@
 
     .navbar {
       /* height: 48px; */
-      background-color: #f6f6f6;;
+      background-color: #f6f6f6;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,11 +32,34 @@
       gap: 10px;
     }
 
-    .download{
-        padding: 10px;
-        border: none;
-        background-color: #ebdc14;
-        border-radius: 4px;
+    .download {
+      padding: 10px 20px;
+      border: none;
+      background: #ebdc14;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+      transition: left 0.6s ease;
+    }
+
+    .download:hover::before {
+      left: 150%;
     }
   </style>
   <body>
