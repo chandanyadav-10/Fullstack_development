@@ -23,6 +23,9 @@
       padding: 30px;
       border: 1px solid #cecece;
       border-radius: 4px;
+      position: sticky;
+      top: 10px;
+      z-index: 1000;
     }
 
     ul {
@@ -30,6 +33,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .download {
@@ -61,6 +65,55 @@
     .download:hover::before {
       left: 150%;
     }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .cardContainer {
+      display: grid;
+      grid-template-columns: 300px 300px 300px;
+      /* grid-template-rows: 300px 300px 300px 300px; */
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    .box {
+      height: 200px;
+      background-color: #f6f6f6;
+      border: 1px solid #cecece;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    button {
+      margin-top: 50px;
+      margin: 5px;
+      border: none;
+      padding: 20px;
+    }
+
+    .btn-64 {
+      background-color: #ebdc14;
+      border-radius: 5px;
+      color: black;
+    }
+    .btn-32 {
+      background-color: black;
+      border-radius: 5px;
+      color: white;
+    }
   </style>
   <body>
     <div class="navbar">
@@ -90,10 +143,93 @@
           </ul>
         </nav>
       </div>
-      <div class="d-l-s">
+      <div class="right">
         <button class="download">Download</button>
         <span class="language">English</span>
         <span class="search"><input type="text" /></span>
+      </div>
+    </div>
+
+    <div class="cardContainer">
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <h2>English</h2>
+        <p>English</p>
+        <div class="btn">
+          <a href=""><button class="btn-64">Download 64-bit</button></a
+          ><a href=""><button class="btn-32">Download 32-bit</button></a>
+        </div>
       </div>
     </div>
   </body>
