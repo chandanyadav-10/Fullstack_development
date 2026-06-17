@@ -163,9 +163,13 @@ body {
 }
 
 .playbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 9px;
   background-color: rgb(68, 65, 65);
+  height: 40px;
   width: 72vw;
   padding: 15px;
   border-bottom-left-radius: 7px;
@@ -179,6 +183,11 @@ body {
   gap: 16px;
 }
 
+/* .songbtns :nth-child(2){
+  background-color: white;
+  width: 20px;
+} */
+
 .songList {
   padding: 20px 0px;
   height: 444px;
@@ -187,20 +196,20 @@ body {
 }
 
 .songList::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .songList::-webkit-scrollbar-track {
-    background: #1a1a1a;
+  background: #1a1a1a;
 }
 
 .songList::-webkit-scrollbar-thumb {
-    background: #535353;
-    border-radius: 10px;
+  background: #535353;
+  border-radius: 10px;
 }
 
 .songList::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
+  background: #b3b3b3;
 }
 
 .songList ul li {
@@ -237,4 +246,23 @@ body {
   padding: 5px;
   border-radius: 5px;
   width: 14px;
+}
+
+.seekbar {
+  height: 4px;
+  width: 70%;
+  background-color: grey;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+  bottom: 5px;
+  transition: left 0.5s;
 }
