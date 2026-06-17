@@ -26,20 +26,59 @@ async function getSongs() {
 // };
 
 let currentSong;
+function secondsToMinutesSeconds(seconds) {
+  if (isNaN(seconds) || seconds < 0) {
+    return "Invalid input";
+  }
+
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
 
 const playMusic = (track) => {
+  localStorage.setItem("currentSong", track);
+
   if (currentSong) {
     currentSong.pause();
   }
 
   currentSong = new Audio("/songs/" + track);
 
+  //Listen for time update event
+  currentSong.addEventListener("timeupdate", () => {
+    document.querySelector(".songtime").innerHTML =
+      `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`;
+  });
+
   currentSong.play();
+  document.getElementById("play").src = "pause.svg";
+  let songInfo = decodeURIComponent(track)
+    .replace(/\[[^\]]*\]/g, "") // remove [cL0KKSPjZf8]
+    .replace(/[_]/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(".mp3", "")
+    .trim();
+  document.querySelector(".songinfo").innerHTML =
+    `<img class="invert" src="music.svg" alt="">${songInfo}`;
+  document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 };
 
 async function main() {
   //Get the list of all songs
   let songs = await getSongs();
+
+  let savedSong = localStorage.getItem("currentSong");
+
+  if (savedSong) {
+    playMusic(savedSong);
+    currentSong.pause(); // optional
+    document.getElementById("play").src = "play.svg";
+  }
 
   //show all the songs in the playlist
   let songUL = document
@@ -56,7 +95,7 @@ async function main() {
     songUL.innerHTML += `<li data-song="${song}">
               <img class="invert" src="music.svg" alt="">
               <div class="info">
-                <div>${cleanSong}"</div>
+                <div>${cleanSong}</div>
                 <div>Chandan</div>
               </div>
               <div class="playnow">
@@ -83,6 +122,20 @@ async function main() {
 
       playMusic(track);
     });
+  });
+
+  // Attach eventListner to previous, play and next
+  const play = document.getElementById("play");
+  play.addEventListener("click", () => {
+    if (!currentSong) return;
+
+    if (currentSong.paused) {
+      currentSong.play();
+      play.src = "pause.svg";
+    } else {
+      currentSong.pause();
+      play.src = "play.svg";
+    }
   });
 }
 
