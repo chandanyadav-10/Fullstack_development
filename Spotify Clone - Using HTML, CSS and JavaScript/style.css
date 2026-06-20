@@ -349,4 +349,8 @@ body {
   .closeIcon{
     display: block;
   }
+
+  /* .playbar{
+    width: calc(100vw - 70px);
+  } */
 }

@@ -1,7 +1,8 @@
 console.log("Hello Spotify");
+let songs;
 
 async function getSongs() {
-  let songs = await fetch("http://127.0.0.1:5500/songs/");
+  songs = await fetch("http://127.0.0.1:5500/songs/");
   let response = await songs.text();
 
   let div = document.createElement("div");
@@ -28,7 +29,7 @@ async function getSongs() {
 let currentSong;
 function secondsToMinutesSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
-    return "Invalid input";
+    return "00:00";
   }
 
   const minutes = Math.floor(seconds / 60);
@@ -65,13 +66,13 @@ const playMusic = (track) => {
   });
 
   //Add event listener to hamburger
-  document.querySelector(".hamburger").addEventListener("click", ()=>{
-    document.querySelector(".left").style.left = "0"
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "0";
   });
 
   //Add event listener to close icon
-   document.querySelector(".closeIcon").addEventListener("click", ()=>{
-    document.querySelector(".left").style.left = "-100%"
+  document.querySelector(".closeIcon").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "-100%";
   });
 
   currentSong.play();
@@ -155,6 +156,25 @@ async function main() {
     } else {
       currentSong.pause();
       play.src = "play.svg";
+    }
+  });
+
+  //Add event listener to previous
+  previous.addEventListener("click", () => {
+    console.log("Previous.clicked");
+    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if((index-1) >= 0){
+      playMusic(songs[index-1])
+    }
+  });
+
+  //Add event listener to next
+  next.addEventListener("click", () => {
+    console.log("Next.clicked");
+
+    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if((index+1) < songs.length){
+      playMusic(songs[index+1])
     }
   });
 }
