@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --a: 0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -151,7 +154,7 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   margin: 30px;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   max-height: 70vh;
 }
 
@@ -162,15 +165,28 @@ body {
   border-radius: 10px;
   background-color: #252525;
   position: relative;
+  transition: background-color 0.5s;
 }
 
 .card img {
   width: 100%;
-  object-fit: contain;
+  display: block;
+  border-radius: 5px;
 }
 
-.card > * {
-  padding-top: 10px;
+.card > h2,
+p {
+  padding-top: 5px;
+}
+
+.card:hover {
+  background-color: #404447;
+  cursor: pointer;
+}
+
+.card:hover .playBtn {
+  --a: 1;
+  cursor: pointer;
 }
 
 .playBtn {
@@ -180,9 +196,9 @@ body {
   padding: 0;
   position: absolute;
   right: 16px;
-  top: 240px;
-  opacity: 0;
-  transition: all 1s ease-out;
+  top: 126px;
+  opacity: var(--a);
+  transition: all 0.3s ease-in-out;
 }
 
 .playBtn svg {
@@ -196,7 +212,7 @@ body {
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 9px;
+  bottom: 0px;
   background-color: rgb(25, 25, 25);
   height: 40px;
   width: 72vw;
@@ -259,6 +275,11 @@ body {
   padding: 10px 5px;
   font-size: 10px;
 }
+.songList ul li:hover {
+  background-color: #404447;
+  cursor: pointer;
+  transition: all 0.5s;
+}
 
 .playnow {
   display: flex;
@@ -287,7 +308,7 @@ body {
   background-color: grey;
   border-radius: 10px;
   position: absolute;
-  bottom: 5px;
+  bottom: 9px;
   cursor: pointer;
 }
 
@@ -319,10 +340,32 @@ body {
   border-radius: 2px;
 }
 
-.songtime {
+.timeVolume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 238px;
   position: absolute;
-  right: 15px;
-  /* font-size: 10px; */
+  right: 2px;
+}
+
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range input[type="range"] {
+  width: 82px;
+  height: 5px;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -346,7 +389,7 @@ body {
     display: block;
   }
 
-  .closeIcon{
+  .closeIcon {
     display: block;
   }
 

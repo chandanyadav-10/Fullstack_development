@@ -1,8 +1,10 @@
 console.log("Hello Spotify");
 let songs;
+let currFolder;
 
-async function getSongs() {
-  songs = await fetch("http://127.0.0.1:5500/songs/");
+async function getSongs(folder) {
+  currFolder = folder;
+  songs = await fetch(`http://127.0.0.1:5500/${folder}/`);
   let response = await songs.text();
 
   let div = document.createElement("div");
@@ -10,15 +12,63 @@ async function getSongs() {
 
   let as = div.getElementsByTagName("a");
 
-  let songsArr = [];
+  songs = [];
 
   for (let a of as) {
     if (a.href.endsWith(".mp3")) {
-      songsArr.push(a.href.split("/songs/")[1]);
+      songs.push(a.href.split(`/${folder}/`)[1]);
     }
   }
 
-  return songsArr;
+  //show all the songs in the playlist
+  let songUL = document
+    .querySelector(".songList")
+    .getElementsByTagName("ul")[0];
+
+    songUL.innerHTML = ""
+
+  for (let song of songs) {
+    let cleanSong = decodeURIComponent(song)
+      .replace(/\[[^\]]*\]/g, "") // remove [cL0KKSPjZf8]
+      .replace(/[_]/g, " ")
+      .replace(/\s+/g, " ")
+      .replace(".mp3", "")
+      .trim();
+    songUL.innerHTML += `<li data-song="${song}">
+              <img class="invert" src="music.svg" alt="">
+              <div class="info">
+                <div>${cleanSong}</div>
+                <div>Chandan</div>
+              </div>
+              <div class="playnow">
+                <span>Play Now</span>
+                <img class="invert" src="play.svg" alt="">
+              </div>
+  </li>`;
+  }
+
+
+  //Attach an event listener to each song
+  
+  // Array.from(
+  //   document.querySelector(".songList").getElementsByTagName("li"),
+  // ).forEach((e) => {
+  //   console.log(e.querySelector(".info").firstElementChild.innerHTML);
+  //   playMusic(e.querySelector(".info").firstElementChild.innerHTML);
+  // });
+
+  Array.from(
+    document.querySelector(".songList").getElementsByTagName("li"),
+  ).forEach((e) => {
+    e.addEventListener("click", () => {
+      let track = e.dataset.song;
+
+      console.log(track);
+
+      playMusic(track);
+    });
+  });
+
 }
 
 // const playMusic = (track) => {
@@ -48,7 +98,7 @@ const playMusic = (track) => {
     currentSong.pause();
   }
 
-  currentSong = new Audio("/songs/" + track);
+  currentSong = new Audio(`/${currFolder}/` + track);
 
   //Listen for time update event
   currentSong.addEventListener("timeupdate", () => {
@@ -90,7 +140,7 @@ const playMusic = (track) => {
 
 async function main() {
   //Get the list of all songs
-  let songs = await getSongs();
+  let songs = await getSongs("songs/ph");
 
   let savedSong = localStorage.getItem("currentSong");
 
@@ -99,51 +149,6 @@ async function main() {
     currentSong.pause(); // optional
     document.getElementById("play").src = "play.svg";
   }
-
-  //show all the songs in the playlist
-  let songUL = document
-    .querySelector(".songList")
-    .getElementsByTagName("ul")[0];
-
-  for (let song of songs) {
-    let cleanSong = decodeURIComponent(song)
-      .replace(/\[[^\]]*\]/g, "") // remove [cL0KKSPjZf8]
-      .replace(/[_]/g, " ")
-      .replace(/\s+/g, " ")
-      .replace(".mp3", "")
-      .trim();
-    songUL.innerHTML += `<li data-song="${song}">
-              <img class="invert" src="music.svg" alt="">
-              <div class="info">
-                <div>${cleanSong}</div>
-                <div>Chandan</div>
-              </div>
-              <div class="playnow">
-                <span>Play Now</span>
-                <img class="invert" src="play.svg" alt="">
-              </div>
-  </li>`;
-  }
-
-  //Attach an event listener to each song
-  // Array.from(
-  //   document.querySelector(".songList").getElementsByTagName("li"),
-  // ).forEach((e) => {
-  //   console.log(e.querySelector(".info").firstElementChild.innerHTML);
-  //   playMusic(e.querySelector(".info").firstElementChild.innerHTML);
-  // });
-
-  Array.from(
-    document.querySelector(".songList").getElementsByTagName("li"),
-  ).forEach((e) => {
-    e.addEventListener("click", () => {
-      let track = e.dataset.song;
-
-      console.log(track);
-
-      playMusic(track);
-    });
-  });
 
   // Attach eventListner to previous, play and next
   const play = document.getElementById("play");
@@ -177,6 +182,21 @@ async function main() {
       playMusic(songs[index+1])
     }
   });
+
+  //Add eventListener to volume
+  document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e)=>{
+    currentSong.volume = (e.target.value)/100;
+  })
+
+  //Load the playlist whenever card is clicked
+Array.from(document.getElementsByClassName("card")).forEach(e=>{
+  console.log(e)
+  e.addEventListener("click", async item=>{
+    console.log(item.currentTarget.dataset.folder)
+    songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+  })
+})
+
 }
 
 main();
