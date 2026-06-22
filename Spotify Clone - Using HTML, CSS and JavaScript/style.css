@@ -270,7 +270,7 @@ p {
   cursor: pointer;
   /* border: 1px solid white; */
   background-color: #2a2a2a;
-  margin: 6px 0px;
+  margin: 6px 5px;
   border-radius: 5px;
   padding: 10px 5px;
   font-size: 10px;
@@ -354,6 +354,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .range {
@@ -363,7 +364,7 @@ p {
 }
 
 .range input[type="range"] {
-  width: 82px;
+  width: 60px;
   height: 5px;
   cursor: pointer;
 }
