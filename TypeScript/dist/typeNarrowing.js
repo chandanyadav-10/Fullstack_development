@@ -40,5 +40,25 @@ function light(trafficLight) {
         return "Go";
     }
 }
-console.log(light("red"));
+console.log(light("yellow"));
+class kulhadChai {
+    serve() {
+        return "Serving Kulhad Chai";
+    }
+}
+class cutting {
+    serve() {
+        return "Serving cutting Chai";
+    }
+}
+function serve(chai) {
+    if (chai instanceof kulhadChai) {
+        return chai.serve();
+    }
+    return chai.serve();
+}
+const chai1 = new kulhadChai();
+const chai2 = new cutting();
+console.log(serve(chai1)); // Serving Kulhad Chai
+console.log(serve(chai2)); // Serving Cutting Chai
 //# sourceMappingURL=typeNarrowing.js.map

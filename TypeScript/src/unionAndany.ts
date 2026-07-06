@@ -8,7 +8,6 @@ let apiRequestStatus: 'pending' | 'success' | 'error' = 'pending'
 let airlineSeat: 'aisle' | 'window' | 'middle' = 'window';
 airlineSeat = 'aisle'
 
-
 // let orders = ['22', '25', '40', '35', '20']
 
 // let currentOrder;
