@@ -181,3 +181,26 @@ function makeChai(order: Chai) {
       return "Ginger chai";
   }
 }
+
+
+// in operator example 
+
+// type MasalaChai = {
+//   spiceLevel: number;
+//   milk: boolean;
+// };
+
+// type GingerChai = {
+//   gingerAmount: number;
+//   milk: boolean;
+// };
+
+// function brew(order: MasalaChai | GingerChai) {
+//   if ("spiceLevel" in order) {
+//     // Here TypeScript knows `order` is MasalaChai
+//     console.log(order.spiceLevel);
+//   } else {
+//     // Here TypeScript knows `order` is GingerChaiv 
+//     console.log(order.gingerAmount);
+//   }
+// }
