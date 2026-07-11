@@ -29,6 +29,7 @@ if (age) {
 else {
     console.log("Done");
 }
+// exhaustive check
 function light(trafficLight) {
     if (trafficLight === "red") {
         return "Stop";
@@ -41,6 +42,7 @@ function light(trafficLight) {
     }
 }
 console.log(light("yellow"));
+// instanceof
 class kulhadChai {
     serve() {
         return "Serving Kulhad Chai";
@@ -61,4 +63,49 @@ const chai1 = new kulhadChai();
 const chai2 = new cutting();
 console.log(serve(chai1)); // Serving Kulhad Chai
 console.log(serve(chai2)); // Serving Cutting Chai
+function isChaiOrder(obj) {
+    return (typeof obj === "object" &&
+        obj !== null &&
+        typeof obj.type === "string" &&
+        typeof obj.sugar === "number");
+}
+function serveOrder(item) {
+    if (isChaiOrder(item)) {
+        return `Serving ${item.type} chai with ${item.sugar} sugar`;
+    }
+    return `Serving custom chai: ${item}`;
+}
+const order = {
+    type: "Masala",
+    sugar: 2
+};
+console.log(serveOrder(order));
+function makeChai(order) {
+    switch (order.type) {
+        case "masala":
+            return "Masala chai";
+        case "elaichi":
+            return "Elaichi chai";
+        case "ginger":
+            return "Ginger chai";
+    }
+}
+// in operator example 
+// type MasalaChai = {
+//   spiceLevel: number;
+//   milk: boolean;
+// };
+// type GingerChai = {
+//   gingerAmount: number;
+//   milk: boolean;
+// };
+// function brew(order: MasalaChai | GingerChai) {
+//   if ("spiceLevel" in order) {
+//     // Here TypeScript knows `order` is MasalaChai
+//     console.log(order.spiceLevel);
+//   } else {
+//     // Here TypeScript knows `order` is GingerChaiv 
+//     console.log(order.gingerAmount);
+//   }
+// }
 //# sourceMappingURL=typeNarrowing.js.map
