@@ -8,10 +8,10 @@ function getChaiPrice(): number {
   return 20;
 }
 
-function makeOrder(order: string): string {
-  if (!order) return null;
-  return order;
-}
+// function makeOrder(order: string): string {
+//   if (!order) return null;
+//   return order;
+// }
 
 function chaiLog(): void {
     console.log("Chai is Ready")
