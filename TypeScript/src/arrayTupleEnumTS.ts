@@ -48,7 +48,7 @@ enum Status {
 }
 
 enum ChaiType {
-  MASALA = "masal",
+  MASALA = "masala",
   GINGER = "ginger",
 }
 
